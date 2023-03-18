@@ -78,7 +78,7 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <ol class="flex items-center justify-center col-span-full gap-2 z-10 mt-[-13px]">
+      <ol class="flex items-center justify-center col-span-full gap-2 z-10 mt-[-13px] xl:hidden">
         {images?.map((_, index) => (
           <li class="h-full">
             <button
