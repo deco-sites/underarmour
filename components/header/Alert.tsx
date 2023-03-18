@@ -20,7 +20,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
       <Slider class="bg-badge gap-6 scrollbar-none">
         {alerts.map((alert) => (
           <Text
-            class="flex justify-center items-center w-screen h-[38px]"
+            class="flex justify-center items-center w-screen h-[38px] lg:h-[30px]"
             variant="caption"
             tone="default-inverse"
           >
