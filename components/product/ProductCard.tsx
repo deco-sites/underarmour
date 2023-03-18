@@ -20,7 +20,7 @@ function Sizes(product: Product) {
   );
 
   return (
-    <ul class="flex justify-center items-center gap-2">
+    <ul class="flex justify-start items-center gap-2 mb-[13px]">
       {options.map(([url, value]) => (
         <a href={url}>
           <Avatar
@@ -55,7 +55,7 @@ function ProductCard({ product, preload }: Props) {
   return (
     <div
       id={`product-card-${productID}`}
-      class="w-full group"
+      class="w-full group rounded-[4px] "
     >
       <a href={url} aria-label="product link">
         <div class="relative w-full">
@@ -64,7 +64,7 @@ function ProductCard({ product, preload }: Props) {
             alt={front.alternateName}
             width={200}
             height={279}
-            class="rounded w-full group-hover:hidden"
+            class="w-full group-hover:hidden"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             sizes="(max-width: 640px) 50vw, 20vw"
@@ -74,14 +74,14 @@ function ProductCard({ product, preload }: Props) {
             alt={back?.alternateName ?? front.alternateName}
             width={200}
             height={279}
-            class="rounded w-full hidden group-hover:block"
+            class="w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />
         </div>
 
         <div class="flex flex-col gap-1 py-2">
           <Text
-            class="overflow-hidden overflow-ellipsis whitespace-nowrap"
+            class="overflow-hidden overflow-ellipsis whitespace-nowrap text-[14px] text-[#1d1d1d]"
             variant="caption"
           >
             {name}
@@ -94,7 +94,11 @@ function ProductCard({ product, preload }: Props) {
             >
               {formatPrice(listPrice, offers!.priceCurrency!)}
             </Text>
-            <Text variant="caption" tone="price">
+            <Text
+              class="text-base text-gray-800 font-medium"
+              variant="caption"
+              tone="price"
+            >
               {formatPrice(price, offers!.priceCurrency!)}
             </Text>
           </div>

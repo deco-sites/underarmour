@@ -42,15 +42,18 @@ function Navbar({ items, searchbar }: {
       <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3">
         <div class="flex-none w-44">
           <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
-            <Icon id="Logo" width={126} height={16} />
+            <Icon id="Logo" width={55} height={41} />
           </a>
         </div>
         <div class="flex-auto flex justify-center">
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <HeaderButton variant="search" />
-          <HeaderSearchMenu searchbar={searchbar} />
+          <div class="flex border border-solid px-[9px] rounded-[4px]">
+            <input type="text" placeholder="Pesquisar" />
+            <HeaderButton variant="search" />
+          </div>
+
           <Button
             as="a"
             variant="icon"

@@ -65,7 +65,7 @@ export default function BannnerGrid({
           {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
             <a
               href={href}
-              class={`overflow-hidden ${
+              class={`overflow-hidden max-h-[779px] ${
                 borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
               } ${
                 borderRadius?.desktop
@@ -74,14 +74,30 @@ export default function BannnerGrid({
               }`}
             >
               <Picture>
-                <img
-                  class="w-full max-h-[779px] object-cover"
+                <div class="max-h-[779px] w-[100%] relative pb-[58%]">
+                  <img
+                    class=" w-full h-[100%] left-0 top-0 absolute object-cover"
+                    sizes="(max-width: 640px) 100vw, 30vw"
+                    src={srcMobile}
+                    alt={alt}
+                    width={1320}
+                    height={779}
+                    decoding="async"
+                    loading="lazy"
+                  />
+                </div>
+                {
+                  /* <img
+                  class=" w-full max-h-[779px] object-cover"
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={srcMobile}
                   alt={alt}
+                  width={1320}
+                  height={779}
                   decoding="async"
                   loading="lazy"
-                />
+                /> */
+                }
               </Picture>
             </a>
           ))}
