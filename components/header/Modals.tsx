@@ -36,7 +36,7 @@ function Modals({ menu, searchbar }: Props) {
 
       <Modal
         title="Buscar"
-        mode="sidebar-right"
+        mode="top-down"
         loading="lazy"
         open={displaySearchbar.value &&
           window?.matchMedia("(max-width: 767px)")?.matches}

@@ -19,19 +19,23 @@ function Navbar({ items, searchbar }: {
         class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}
       >
         <HeaderButton variant="menu" />
-
         <a
-          href="/"
-          class={`flex-grow inline-flex items-center min-h-[${navbarHeight}]`}
+          href="/account"
+          class={`inline-flex items-center min-h-[${navbarHeight}]`}
           aria-label="Store logo"
         >
-          <Icon id="Logo" width={126} height={16} />
+          <Icon id="User" width={20} height={22} />
+        </a>
+        <a
+          href="/"
+          class={`inline-flex items-center min-h-[${navbarHeight}]`}
+          aria-label="Store logo"
+        >
+          <Icon id="Logo" width={55} height={41} />
         </a>
 
-        <div class="flex gap-1">
-          <HeaderButton variant="search" />
-          <HeaderButton variant="cart" />
-        </div>
+        <HeaderButton variant="search" />
+        <HeaderButton variant="cart" />
       </div>
 
       {/* Desktop Version */}

@@ -41,7 +41,7 @@ export default function BannnerGrid({
   banners = [],
 }: Props) {
   return (
-    <Container>
+    <div>
       <section class="w-full px-4 md:px-0 mx-auto">
         {title &&
           (
@@ -74,20 +74,8 @@ export default function BannnerGrid({
               }`}
             >
               <Picture>
-                <Source
-                  media="(max-width: 767px)"
-                  src={srcMobile}
-                  width={100}
-                  height={100}
-                />
-                <Source
-                  media="(min-width: 768px)"
-                  src={srcDesktop ? srcDesktop : srcMobile}
-                  width={250}
-                  height={250}
-                />
                 <img
-                  class="w-full"
+                  class="w-full max-h-[779px] object-cover"
                   sizes="(max-width: 640px) 100vw, 30vw"
                   src={srcMobile}
                   alt={alt}
@@ -99,6 +87,6 @@ export default function BannnerGrid({
           ))}
         </div>
       </section>
-    </Container>
+    </div>
   );
 }

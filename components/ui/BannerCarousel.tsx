@@ -49,23 +49,9 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
   } = image;
 
   return (
-    <div class="relative h-[600px] min-w-[100vw] overflow-y-hidden">
+    <div class="relative min-w-[100vw] overflow-y-hidden">
       <a href={action?.href ?? "#"} aria-label={action?.label}>
         <Picture class="w-full" preload={lcp}>
-          <Source
-            media="(max-width: 767px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={mobile}
-            width={360}
-            height={600}
-          />
-          <Source
-            media="(min-width: 768px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={desktop}
-            width={1440}
-            height={600}
-          />
           <img
             class="object-cover w-full sm:h-full"
             loading={lcp ? "eager" : "lazy"}
@@ -73,20 +59,6 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
             alt={alt}
           />
         </Picture>
-        {action && (
-          <div
-            class="absolute top-0 bottom-0 m-auto left-0 right-0 sm:right-auto sm:left-[12%] max-h-min max-w-[235px] flex flex-col gap-4 bg-hover-inverse p-4 rounded"
-            style={{ backdropFilter: "blur(8px)" }}
-          >
-            <Text variant="heading-1" tone="default-inverse">
-              {action.title}
-            </Text>
-            <Text variant="heading-3" tone="default-inverse">
-              {action.subTitle}
-            </Text>
-            <Button variant="secondary">{action.label}</Button>
-          </div>
-        )}
       </a>
     </div>
   );
@@ -106,33 +78,14 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       >
       </style>
-      <ol class="flex items-center justify-center col-span-full gap-4 z-10 row-start-4">
+      <ol class="flex items-center justify-center col-span-full gap-2 z-10 mt-[-13px]">
         {images?.map((_, index) => (
           <li class="h-full">
             <button
               data-dot={index}
               aria-label={`go to slider item ${index}`}
-              class="h-full rounded focus:outline-none group"
+              class="h-full rounded focus:outline-none w-[6px] h-[6px] group bg-[#0000003b] disabled:bg-black"
             >
-              <div
-                class={tw`group-disabled:${
-                  animation(
-                    `${interval}s ease-out 1 forwards`,
-                    keyframes`
-                      from: {
-                        --dot-progress: 0%;
-                      }
-                      to {
-                        --dot-progress: 100%;
-                      }
-                    `,
-                  )
-                } w-16 sm:w-20 h-0.5`}
-                style={{
-                  background:
-                    "linear-gradient(to right, #FFFFFF var(--dot-progress), rgba(255, 255, 255, 0.4) var(--dot-progress))",
-                }}
-              />
             </button>
           </li>
         ))}
@@ -144,7 +97,7 @@ function Dots({ images, interval = 0 }: Props) {
 function Controls() {
   return (
     <>
-      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="lg:flex items-center justify-center z-10 col-start-1 row-start-2 hidden ">
         <Button
           class="h-12 w-12"
           variant="icon"
@@ -159,7 +112,7 @@ function Controls() {
           />
         </Button>
       </div>
-      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="lg:flex items-center justify-center z-10 col-start-3 row-start-2 hidden">
         <Button
           class="h-12 w-12"
           variant="icon"
