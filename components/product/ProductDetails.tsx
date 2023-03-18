@@ -46,8 +46,14 @@ function Details({ page }: { page: ProductDetailsPage }) {
   const [front, back] = images ?? [];
 
   return (
-    <Container class="py-0 sm:py-10">
-      <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
+    <Container class="py-0 sm:py-0">
+      <div class="mb-2.5 p-2">
+        {/* Breadcrumb */}
+        <Breadcrumb
+            itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
+          />
+      </div>
+      <div class="flex flex-col px-2 gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
         <div class="flex flex-row overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2">
           {[front, back ?? front].map((img, index) => (
@@ -67,10 +73,6 @@ function Details({ page }: { page: ProductDetailsPage }) {
         </div>
         {/* Product Info */}
         <div class="flex-auto px-4 sm:px-0">
-          {/* Breadcrumb */}
-          <Breadcrumb
-            itemListElement={breadcrumbList?.itemListElement.slice(0, -1)}
-          />
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <div>
