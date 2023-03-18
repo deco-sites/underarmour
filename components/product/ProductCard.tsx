@@ -104,7 +104,7 @@ function ProductCard({ product, preload }: Props) {
           </div>
         </div>
         {seller && (
-          <div class="">
+          <div class="mb-4">
             <Sizes {...product} />
           </div>
         )}
