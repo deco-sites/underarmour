@@ -6,6 +6,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
+import AddToCartButton from "./AddToCartButton.tsx";
 
 /**
  * A simple, inplace sku selector to be displayed once the user hovers the product card
@@ -76,18 +77,6 @@ function ProductCard({ product, preload }: Props) {
             class="rounded w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />
-          {seller && (
-            <div
-              class="absolute bottom-0 hidden sm:group-hover:flex flex-col gap-2 w-full p-2 bg-opacity-10"
-              style={{
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-                backdropFilter: "blur(2px)",
-              }}
-            >
-              <Sizes {...product} />
-              <Button as="a" href={product.url}>Visualizar Produto</Button>
-            </div>
-          )}
         </div>
 
         <div class="flex flex-col gap-1 py-2">
@@ -110,6 +99,15 @@ function ProductCard({ product, preload }: Props) {
             </Text>
           </div>
         </div>
+        {seller && (
+          <div class="">
+            <Sizes {...product} />
+          </div>
+        )}
+        <AddToCartButton
+          skuId={productID}
+          sellerId={"1"}
+        />
       </a>
     </div>
   );
