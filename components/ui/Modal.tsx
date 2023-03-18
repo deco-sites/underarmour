@@ -16,7 +16,7 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
   title?: string;
-  mode?: "sidebar-right" | "sidebar-left" | "center";
+  mode?: "sidebar-right" | "sidebar-left" | "center" | "top-down";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
 };
@@ -25,6 +25,7 @@ const styles = {
   "sidebar-right": "animate-slide-left sm:ml-auto",
   "sidebar-left": "animate-slide-right",
   center: "",
+  "top-down": "animate-fade-in-down",
 };
 
 const Modal = ({
@@ -66,19 +67,34 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="pt-6 h-full bg-default flex flex-col">
-        <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-2">{title}</Text>
-          </h1>
-          <Button variant="icon" onClick={onClose}>
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-          </Button>
-        </header>
-        <div class="overflow-y-auto h-full flex flex-col">
-          {loading === "lazy" ? lazy.value && children : children}
-        </div>
-      </section>
+      {title !== "Buscar"
+        ? (
+          <section class="pt-6 h-full bg-default flex flex-col">
+            <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">
+              <h1 class={title === "Menu" ? "mx-auto" : ""}>
+                {title === "Menu"
+                  ? <Icon id="Logo" width={40} height={30} />
+                  : <Text variant="heading-2">{title}</Text>}
+              </h1>
+              <Button variant="icon" onClick={onClose}>
+                <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+              </Button>
+            </header>
+            <div class="overflow-y-auto h-full flex flex-col">
+              {loading === "lazy" ? lazy.value && children : children}
+            </div>
+          </section>
+        )
+        : (
+          <div class="flex items-center bg-white">
+            {loading === "lazy" ? lazy.value && children : children}
+            <div class="absolute top-[25px] right-0">
+              <Button variant="icon" onClick={onClose}>
+                <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+              </Button>
+            </div>
+          </div>
+        )}
     </dialog>
   );
 };
