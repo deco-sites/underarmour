@@ -41,7 +41,22 @@ function Sort() {
       id="sort"
       name="sort"
       onInput={applySort}
-      class="w-min h-[36px] px-1 rounded m-2 text-button font-button text-default hover:bg-hover cursor-pointer outline-none"
+      class="h-[36px] px-1 rounded m-2 text-button font-button text-default hover:bg-hover cursor-pointer outline-none min-w-44
+      min-h-[40px]
+      p-[8px]
+      flex
+      items-center
+      w-[48%]
+      relative
+      text-sm
+      font-bold
+      text-gray-900
+      border-solid
+      border-1
+      border-gray-900
+      bg-white
+      outline-none
+      rounded-[0px]"
     >
       {options.map(({ value, label }) => (
         <option key={value} value={value} selected={value === sort}>

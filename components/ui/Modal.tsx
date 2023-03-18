@@ -67,7 +67,7 @@ const Modal = ({
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      {title !== "Buscar"
+      {title !== "Buscar" && title !== "Filtrar"
         ? (
           <section class="pt-6 h-full bg-default flex flex-col">
             <header class="flex px-4 justify-between items-center pb-6 border-b-1 border-default">

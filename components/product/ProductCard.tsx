@@ -58,7 +58,7 @@ function ProductCard({ product, preload }: Props) {
       class="w-full group rounded-[4px] "
     >
       <a href={url} aria-label="product link">
-        <div class="relative w-full">
+        <div class="relative w-full border-solid border-[#d4d5d4] border">
           <Image
             src={front.url!}
             alt={front.alternateName}

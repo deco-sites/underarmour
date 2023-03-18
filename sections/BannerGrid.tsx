@@ -86,18 +86,6 @@ export default function BannnerGrid({
                     loading="lazy"
                   />
                 </div>
-                {
-                  /* <img
-                  class=" w-full max-h-[779px] object-cover"
-                  sizes="(max-width: 640px) 100vw, 30vw"
-                  src={srcMobile}
-                  alt={alt}
-                  width={1320}
-                  height={779}
-                  decoding="async"
-                  loading="lazy"
-                /> */
-                }
               </Picture>
             </a>
           ))}

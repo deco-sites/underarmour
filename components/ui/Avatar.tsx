@@ -43,7 +43,7 @@ function Avatar({ variant, content, class: _class = "", ...btnProps }: Props) {
     return (
       <button
         {...btnProps}
-        class={`border border-default w-8 h-8 ${_class}`}
+        class={`border border-default w-6 h-6 lg:w-8 lg:h-8 ${_class}`}
         style={{ backgroundColor: colors[content] ?? "#FFF" }}
       />
     );
@@ -53,7 +53,7 @@ function Avatar({ variant, content, class: _class = "", ...btnProps }: Props) {
     return (
       <button
         {...btnProps}
-        class={`text-caption font-caption border border-default w-8 h-8 flex justify-center items-center hover:bg-interactive hover:border-interactive hover:text-default-inverse disabled:bg-interactive disabled:text-default-inverse disabled:border-interactive ${_class}`}
+        class={`text-caption font-caption border border-default w-6 h-6 lg:w-8 lg:h-8  flex justify-center items-center hover:bg-interactive hover:border-interactive hover:text-default-inverse disabled:bg-interactive disabled:text-default-inverse disabled:border-interactive ${_class}`}
       >
         {content.substring(0, 2)}
       </button>

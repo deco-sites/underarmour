@@ -52,12 +52,14 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
     <div class="relative min-w-[100vw] overflow-y-hidden">
       <a href={action?.href ?? "#"} aria-label={action?.label}>
         <Picture class="w-full" preload={lcp}>
-          <img
-            class="object-cover w-full sm:h-full"
-            loading={lcp ? "eager" : "lazy"}
-            src={desktop}
-            alt={alt}
-          />
+          <div class="max-h-[779px] w-[100%] relative pb-[47%]">
+            <img
+              class="object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
+              loading={lcp ? "eager" : "lazy"}
+              src={desktop}
+              alt={alt}
+            />
+          </div>
         </Picture>
       </a>
     </div>

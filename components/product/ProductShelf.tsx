@@ -32,7 +32,18 @@ function ProductShelf({
         class=" grid grid-cols-[48px_1fr_48px] grid-rows-[48px_1fr_48px_1fr] py-[2.5rem] px-0 sm:px-5"
       >
         <h2 class="text-center row-start-1 col-span-full">
-          <Text variant="heading-2">{title}</Text>
+          <Text
+            class="  text-center
+  text-[18px]
+  font-normal
+  text-gray-900
+  no-underline
+  uppercase
+  lg:text-[22px]"
+            variant="heading-2"
+          >
+            {title}
+          </Text>
         </h2>
 
         <Slider
@@ -47,8 +58,8 @@ function ProductShelf({
         </Slider>
 
         <>
-          <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
-            <div class="absolute right-1/2">
+          <div class=" relative sm:block z-10 col-start-1 row-start-3">
+            <div class="absolute lg:right-1/2 right-[21%]">
               <Button
                 variant="icon"
                 data-slide="prev"
@@ -58,8 +69,8 @@ function ProductShelf({
               </Button>
             </div>
           </div>
-          <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
-            <div class="absolute left-1/2">
+          <div class=" relative sm:block z-10 col-start-3 row-start-3">
+            <div class="absolute lg:left-1/2 left-[21%]">
               <Button variant="icon" data-slide="next" aria-label="Next item">
                 <Icon size={20} id="ChevronRight" strokeWidth={3} />
               </Button>

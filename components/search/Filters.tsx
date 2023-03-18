@@ -61,9 +61,13 @@ function FilterValues({ key, values }: FilterToggle) {
 }
 
 export default function Filters({ filters }: Props) {
+  const filterSanitazed = filters.filter((filter) => (
+    filter.label.toLowerCase() == "tamanho" ||
+    filter.label.toLowerCase() == "cor"
+  ));
   return (
     <ul class="flex flex-col gap-6 p-4">
-      {filters
+      {filterSanitazed
         .filter(isToggle)
         .map((filter) => (
           <li class="flex flex-col gap-4">

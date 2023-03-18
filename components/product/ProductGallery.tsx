@@ -21,7 +21,7 @@ function NotFound() {
 function Gallery({ page }: { page: ProductListingPage }) {
   return (
     <Container class="px-4 sm:py-10">
-      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
+      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center gap-y-[1em] gap-x-[0.5em]">
         {page.products?.map((product, index) => (
           <div class="w-full list-none">
             <ProductCard product={product} preload={index === 0} />
