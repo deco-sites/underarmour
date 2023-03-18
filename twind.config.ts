@@ -36,16 +36,16 @@ const options: Omit<Options, "selfURL"> = {
       colors: {
         "default": "#FFFFFF",
         "header": "#FFFFFF",
-        "badge": "#8C3D3D", // shopping cart tem isso tambem
-        "footer": "#003232",
+        "badge": "#1d1d1d", // shopping cart tem isso tambem
+        "footer": "#f0f0f0",
         "interactive": "#161616",
         "interactive-inverse": "#FFFFFF",
         "hover": "rgba(0, 0, 0, 0.04)",
         "hover-inverse": "rgba(255, 255, 255, 0.4)",
       },
       textColor: {
-        "default": "#161616",
-        "default-inverse": "#FFFFFF",
+        "default": "#000",
+        "default-inverse": "#fff",
         "subdued": "#66736C",
         "subdued-inverse": "#C6C6C6",
         "price": "#8C3D3D",
@@ -111,7 +111,7 @@ const options: Omit<Options, "selfURL"> = {
       },
     },
     fontFamily: {
-      sans: ["Albert Sans", "sans-serif"],
+      sans: ["ARMOUR Regular", "sans-serif"],
       serif: ["inherit", "serif"],
     },
     screens: {
