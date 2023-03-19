@@ -13,6 +13,7 @@ import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import Rating from "./Rating.tsx";
 import ProductDetailsIconButton from "./ProductDetailsIconButton.tsx";
+import CommentsRatingSection from "./CommentsRatingSection.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductDetailsPage | null>;
@@ -49,6 +50,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
 
   const discount = listPrice! - price!;
   const percentDiscount = ((listPrice! - price!) / listPrice!) * 100;
+  const rating = 4;
 
   return (
     <Container className="sm:w-[82%] max-w-[1400px] mx-auto">
@@ -70,7 +72,12 @@ function Details({ page }: { page: ProductDetailsPage }) {
                 </Text>
               </h1>
               <div class="flex flex-row">
-                <Rating enableColor={false} votingCount={22} activeStars={4} />
+                <Rating
+                  enableColor={false}
+                  votingCount={22}
+                  activeStars={rating}
+                  bigSize={false}
+                />
                 <Text
                   tone="subdued"
                   variant="caption"
@@ -162,12 +169,12 @@ function Details({ page }: { page: ProductDetailsPage }) {
           <div class="flex flex-row sm:flex-row-reverse sm:order-1 overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2 relative">
             {[front].map((img, index) => (
               <Image
-                style={{ aspectRatio: "1" }}
-                class="snap-center min-w-[200vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
-                sizes="(max-width: 640px) 200vw, 30vw"
+                style={{ aspectRatio: "500 / 350" }}
+                class="snap-center min-w-[200vw] sm:min-w-0 sm:w-auto sm:h-[350]"
+                sizes="(max-width: 700px) 200vw, 30vw"
                 src={img.url!}
                 alt={img.alternateName}
-                width={350}
+                width={500}
                 height={350}
                 // Preload LCP image for better web vitals
                 preload={index === 0}
@@ -176,15 +183,15 @@ function Details({ page }: { page: ProductDetailsPage }) {
             ))}
             {discount > 0 && (
               <span className="flex justify-center items-center absolute top-11 left-1 text-black 
-            uppercase text-white font-bold bg-red-600 tracking-wider py-2 px-5">
-                {percentDiscount.toFixed(0)} OFF
+            uppercase text-white font-bold bg-red-600 text-sm tracking-wider py-2 px-2">
+                {percentDiscount.toFixed(0)}% OFF
               </span>
             )}
           </div>
         </div>
       </div>
-      <div class="mt-6">
-        <div class="mt-4 sm:mt-6 bg-gray-200 max-w-fit-content flex items-center mx-auto cursor-pointer">
+      <div class="my-6">
+        <div class="mt-4 sm:mt-6 bg-gray-200 max-w-fit flex items-center mx-auto cursor-pointer">
           <div class="flex justify-center items-center py-2 px-4 bg-red-600 text-white">
             <svg
               stroke="currentColor"
@@ -211,16 +218,43 @@ function Details({ page }: { page: ProductDetailsPage }) {
         <div class="mt-4 sm:mt-6">
           <Text variant="caption">
             {description && (
-              <details>
+              <details open={true}>
                 <summary class="cursor-pointer text-xl font-semibold">
                   Exibir detalhes
                 </summary>
                 <div class="ml-2 mt-2 text-lg">{description}</div>
               </details>
             )}
+            <div class="mt-8">
+              <button class="uppercase flex flex-row border-1 border-gray-500 p-0 p-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#9e9e9e"
+                  viewBox="0 0 100 100"
+                  width={20}
+                  height={20}
+                >
+                  <circle cx="78.2" cy="21.8" r="20.2"></circle>
+                  <circle cx="22" cy="50.1" r="20.2"></circle>
+                  <circle cx="78" cy="78.4" r="20.2"></circle>
+                  <polyline
+                    stroke-width="13"
+                    fill="transparent"
+                    points="78.2,21.8 22,50.1 78,78.4 "
+                  >
+                  </polyline>
+                </svg>
+                <span class="ml-3 text-sm text-black">
+                  Compartilhar
+                </span>
+              </button>
+            </div>
           </Text>
         </div>
       </div>
+      <Container className="sm:w-[100%] max-w-[1400px] mx-auto mb-16">
+        <CommentsRatingSection approval={92} rating={rating} />
+      </Container>
     </Container>
   );
 }

@@ -24,7 +24,7 @@ function Alert({ alerts = [], interval = 5 }: Props) {
             variant="caption"
             tone="default-inverse"
           >
-            {alert}
+            teste
           </Text>
         ))}
       </Slider>
