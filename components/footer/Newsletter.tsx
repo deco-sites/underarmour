@@ -1,4 +1,5 @@
 import Text from "$store/components/ui/Text.tsx";
+import Button from "$store/components/ui/Button.tsx";
 
 function Newsletter() {
   return (
@@ -18,13 +19,9 @@ function Newsletter() {
           class="bg-white py-2 px-3 flex-grow rounded text-default-inverse border-1 border-default"
           placeholder="Insira seu e-mail"
         />
-        <button
-          class="text-white bg-red-600 py-2 px-3 bg-interactive-inverse 	font-bold rounded"
-          type="bgutton" // prevent form's default behavior
-          style="font-size: 15px;"
-        >
+        <Button class="w-full rounded-[0px] uppercase">
           SE INSCREVA
-        </button>
+        </Button>
       </form>
     </div>
   );

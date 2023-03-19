@@ -7,7 +7,7 @@ function Info() {
         class="flex flex-col sm:flex-row items-left gap-10 sm:gap-20"
         style="font-size: 15px;"
       >
-        <div class="mt-5 grid grid-cols-4 gap-6">
+        <div class="mt-5 grid grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="font-bold">
             <a href="https://www.underarmour.com.br/lojas">
               Encontre uma loja perto
