@@ -24,9 +24,15 @@ function Alert({ alerts = [], interval = 5 }: Props) {
             variant="caption"
             tone="default-inverse"
           >
-            teste
+            {alert}
           </Text>
         ))}
+        {/* TODO: flag */}
+        {
+          /* <Text className="text-white uppercase">
+          🇧🇷&nbsp;BR
+        </Text> */
+        }
       </Slider>
 
       <SliderControllerJS rootId={id} interval={interval && interval * 1e3} />
