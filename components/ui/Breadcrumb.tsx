@@ -29,7 +29,7 @@ function Breadcrumb({ itemListElement = [] }: Props) {
       {itemListElement.map((item) => (
         <>
           <li class="mt-0.5">
-            |
+            /
           </li>
           <Item {...item} />
         </>

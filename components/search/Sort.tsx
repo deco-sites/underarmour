@@ -41,7 +41,7 @@ function Sort() {
       id="sort"
       name="sort"
       onInput={applySort}
-      class="h-[36px] px-1 rounded m-2 text-button font-button text-default hover:bg-hover cursor-pointer outline-none min-w-44
+      class="lg:w-[160px] lg:h-[30px] lg:min-h-0 lg:px-1 lg:py-0 lg:border-[2px] h-[36px] px-1 rounded m-2 text-button font-button text-default hover:bg-hover cursor-pointer outline-none min-w-44
       min-h-[40px]
       p-[8px]
       flex

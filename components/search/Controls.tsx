@@ -23,13 +23,14 @@ function Controls({ page }: { page: ProductListingPage }) {
   const breadcrumb = page?.breadcrumb;
 
   return (
-    <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4 sm:flex-row sm:h-[53px] md:border-b-1">
-      <div class="flex flex-row items-center sm:p-0 mb-2">
-        <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
-      </div>
-      <div class="flex flex-row sm:gap-4 items-center justify-between ">
-        <Button
-          class="  min-w-[44px]
+    <>
+      <Container class="flex flex-col justify-between mb-4 md:mb-0 p-4 md:p-0 sm:gap-4 sm:flex-row sm:h-[53px] md:border-b-1 lg:border-0">
+        <div class="flex flex-row items-center sm:p-0 mb-2">
+          <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+        </div>
+        <div class="flex flex-row sm:gap-4 items-center justify-between ">
+          <Button
+            class="lg:hidden  min-w-[44px]
         min-h-[40px]
         w-[48%]
         p-[8px]
@@ -48,28 +49,33 @@ function Controls({ page }: { page: ProductListingPage }) {
         duration-1000
         ease-in
         rounded-[0px]"
-          variant="tertiary"
-          onClick={() => {
-            open.value = true;
+            variant="tertiary"
+            onClick={() => {
+              open.value = true;
+            }}
+          >
+            Filtrar por
+            <Icon id="FilterList" width={27} height={27} />
+          </Button>
+          <Sort />
+        </div>
+
+        <Modal
+          class="lg:hidden"
+          title="Filtrar"
+          mode="sidebar-left"
+          open={open.value}
+          onClose={() => {
+            open.value = false;
           }}
         >
-          Filtrar por
-          <Icon id="FilterList" width={27} height={27} />
-        </Button>
-        <Sort />
-      </div>
-
-      <Modal
-        title="Filtrar"
-        mode="sidebar-left"
-        open={open.value}
-        onClose={() => {
-          open.value = false;
-        }}
-      >
+          <Filters filters={filters} />
+        </Modal>
+      </Container>
+      <div class="hidden lg:flex">
         <Filters filters={filters} />
-      </Modal>
-    </Container>
+      </div>
+    </>
   );
 }
 
