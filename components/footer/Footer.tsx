@@ -133,16 +133,16 @@ function Footer({ sections = [] }: Props) {
         <Container class="w-full">
           <FooterContainer class="flex justify-between w-full">
             <Text
-              class="flex items-center gap-1"
+              class="flex items-center gap-1 text-black"
               variant="body"
-              tone="default-inverse"
+              tone="default"
             >
               Powered by{" "}
               <a
                 href="https://www.deco.cx"
                 aria-label="powered by https://www.deco.cx"
               >
-                <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
+                <Icon id="Deco" class="text-black" fill="#000" height={20} width={60} strokeWidth={0.01} />
               </a>
             </Text>
 

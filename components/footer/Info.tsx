@@ -31,7 +31,7 @@ function Info() {
             <p class="mt-3  font-bold">Email</p>
             <p>
               <a href="mailto:sacunderarmour@vulcabras.com">
-                sacunderarmour@vulcabras.com
+                sacunderarmour<br />@vulcabras.com
               </a>
             </p>
           </div>
