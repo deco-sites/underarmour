@@ -54,7 +54,13 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
         <Picture class="w-full" preload={lcp}>
           <div class="max-h-[779px] w-[100%] relative pb-[47%]">
             <img
-              class="object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
+              class="lg:hidden object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
+              loading={lcp ? "eager" : "lazy"}
+              src={mobile}
+              alt={alt}
+            />
+            <img
+              class="hidden lg:block object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
               loading={lcp ? "eager" : "lazy"}
               src={desktop}
               alt={alt}
