@@ -21,7 +21,7 @@ function Sizes(product: Product) {
   );
 
   return (
-    <ul class="flex justify-start items-center gap-2 mb-[13px]">
+    <ul class="flex justify-start items-center gap-2 mb-[13px] overflow-hidden">
       {options.map(([url, value]) => (
         <a href={url}>
           <Avatar

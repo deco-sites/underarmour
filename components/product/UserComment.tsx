@@ -24,7 +24,7 @@ function UserComment(
   }: Props,
 ) {
   return (
-    <li class="flex flex-row justify-between py-10 px-2 border-b border-gray-300 first:border-t">
+    <li class="flex flex-col lg:flex-row items-start justify-between py-10 px-2 border-b border-gray-300 first:border-t">
       <div class="flex flex-col justify-center">
         <Text
           variant="body"

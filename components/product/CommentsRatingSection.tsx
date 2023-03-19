@@ -19,7 +19,7 @@ function CommentsRatingSection({ rating = 0, approval = 0 }: Props) {
         </h3>
         <div class="h-[2px] bg-[#c3cec6] w-[80%]"></div>
       </div>
-      <div class="flex items-center justify-evenly overflow-hidden my-4">
+      <div class="flex flex-col lg:flex-row items-center justify-evenly overflow-hidden my-4">
         <div class="flex flex-col items-center">
           <div class="inline-flex items-end">
             <span class="text-6xl font-bold">4.6</span>
@@ -68,7 +68,7 @@ function CommentsRatingSection({ rating = 0, approval = 0 }: Props) {
           </span>
         </div>
       </div>
-      <div class="flex flex-row mt-10">
+      <div class="flex flex-row mt-10 mx-4 lg:mx-0">
         <Text variant="heading-3" tone="default">Avaliações mais recentes</Text>
       </div>
       <ul class="flex flex-col mt-8 mb-10">

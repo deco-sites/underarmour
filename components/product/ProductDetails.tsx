@@ -182,7 +182,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
               />
             ))}
             {discount > 0 && (
-              <span className="flex justify-center items-center absolute top-11 left-1 text-black 
+              <span className="flex justify-center items-center absolute top-11 left-1 text-white 
             uppercase text-white font-bold bg-red-600 text-sm tracking-wider py-2 px-2">
                 {percentDiscount.toFixed(0)}% OFF
               </span>
@@ -215,7 +215,7 @@ function Details({ page }: { page: ProductDetailsPage }) {
           </p>
         </div>
         {/* Description card */}
-        <div class="mt-4 sm:mt-6">
+        <div class="mt-4 sm:mt-6 mx-2">
           <Text variant="caption">
             {description && (
               <details open={true}>
