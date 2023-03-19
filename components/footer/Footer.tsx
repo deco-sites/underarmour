@@ -4,6 +4,8 @@ import Container from "$store/components/ui/Container.tsx";
 
 import Newsletter from "./Newsletter.tsx";
 import type { ComponentChildren } from "preact";
+import Community from "./Community.tsx";
+import Info from "./Info.tsx";
 
 export type IconItem = { icon: AvailableIcons };
 export type StringItem = {
@@ -60,11 +62,15 @@ export interface Props {
 
 function Footer({ sections = [] }: Props) {
   return (
-    <footer class="w-full bg-footer flex flex-col divide-y-1 divide-default">
-      <div>
-        <Container class="w-full flex flex-col divide-y-1 divide-default">
+    <footer class="w-full bg-footer flex flex-col">
+      <div class="mx-auto max-w-screen-md text-center ">
+        <Container class="w-full flex flex-col ">
           <FooterContainer>
             <Newsletter />
+            <Community />
+            <div class=" text-left ">
+              <Info />
+            </div>
           </FooterContainer>
 
           <FooterContainer>
