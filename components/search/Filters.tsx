@@ -97,7 +97,7 @@ export default function Filters({ filters }: Props) {
             )
           ))}
       </ul>
-      <div class="hidden lg:flex flex-col w-full max-w-[1415px] mx-auto">
+      <div class="hidden lg:flex flex-col w-full max-w-[1415px] mx-auto lg:px-4">
         {filterSanitazed2.filter(isToggle)
           .map((filter) => (
             <li class="flex flex-col gap-8 first-child:hidden mb-8 containerfilter">
