@@ -26,6 +26,18 @@ function GlobalTags() {
       <link rel="manifest" href={asset("/site.webmanifest")} />
       <meta name="theme-color" content="#221E1F" />
       <meta name="msapplication-TileColor" content="#221E1F" />
+      <meta name="language" content="pt-BR" />
+      <meta name="country" content="BRA" />
+      <meta name="currency" content="R$" />
+      <meta name="description" content="Nossa missão é tornar todos os atletas melhores por meio da paixão, design e busca incansável pela inovação." />
+      <meta name="Abstract" content="Under Armour Brasil | Loja Online Oficial" />
+      <meta name="author" content="underarmourbr" />
+      <meta property="og:title" content="Under Armour Brasil | Loja Online Oficial" />
+      <meta property="og:description" content="Nossa missão é tornar todos os atletas melhores por meio da paixão, design e busca incansável pela inovação." />
+      <meta property="og:url" content="https://www.underarmour.com.br" />
+      <meta property="og:type" content="website" />
+      <meta property="og:locale" content="pt_BR" />
+      <meta property="og:site_name" content="Under Armour" />
 
       {
         /*
