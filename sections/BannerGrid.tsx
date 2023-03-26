@@ -71,8 +71,7 @@ export default function BannnerGrid({
                 decoding="async"
                 loading="lazy"
                 className="hidden"
-              >
-              </img>
+              />
               <a
                 href={href}
                 loading="lazy"
