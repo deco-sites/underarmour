@@ -2,7 +2,7 @@ import Text from "$store/components/ui/Text.tsx";
 
 function Community() {
   return (
-    <div class="mt-3 flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
+    <div class="mt-3 mb-6 flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
       <Text
         variant="caption"
         tone="default-inverse"

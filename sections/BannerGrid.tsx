@@ -63,31 +63,22 @@ export default function BannnerGrid({
           }`}
         >
           {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
-            <a
-              href={href}
-              class={`overflow-hidden max-h-[779px] ${
-                borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
-              } ${
-                borderRadius?.desktop
-                  ? `sm:rounded-[${borderRadius.desktop}px]`
-                  : `sm:rounded-none`
-              }`}
-            >
-              <Picture>
-                <div class="max-h-[779px] w-[100%] relative pb-[58%]">
-                  <img
-                    class=" w-full h-[100%] left-0 top-0 absolute object-contain"
-                    sizes="(max-width: 640px) 100vw, 30vw"
-                    src={srcMobile}
-                    alt={alt}
-                    width="1320"
-                    height="525"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </div>
-              </Picture>
-            </a>
+            <div class="m-0 w-full h-fit">
+              <img height="525" src={srcMobile} alt={alt} className="hidden">
+              </img>
+              <a
+                href={href}
+                style={`background-image:url('${srcMobile}')`}
+                class={`h-full block relative pb-[58.88889%] bg-no-repeat bg-cover bg-center ${
+                  borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
+                } ${
+                  borderRadius?.desktop
+                    ? `sm:rounded-[${borderRadius.desktop}px]`
+                    : `sm:rounded-none`
+                }`}
+              >
+              </a>
+            </div>
           ))}
         </div>
       </section>

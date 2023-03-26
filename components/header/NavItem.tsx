@@ -13,7 +13,7 @@ function NavItem({ item }: { item: INavItem }) {
   const { href, label, children, image } = item;
 
   return (
-    <li class="group flex items-center hover:border-red-600 hover:border-b-4">
+    <li class="group flex items-center border-b-4 border-transparent hover:border-red-600">
       <a href={href} class="p-2">
         <Text
           class="font-bold p-0 m-0 no-underline uppercase text-black text-sm"

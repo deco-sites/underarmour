@@ -45,7 +45,7 @@ function Navbar({ items, searchbar }: {
             <Icon id="Logo" width={55} height={41} />
           </a>
         </div>
-        <div class="flex-auto flex justify-center self-stretch">
+        <div class="flex-auto flex justify-center self-stretch gap-8">
           {items.map((item) => <NavItem item={item} />)}
         </div>
         <div class="flex-none w-44 flex items-center justify-end gap-2">

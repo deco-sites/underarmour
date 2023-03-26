@@ -3,7 +3,7 @@ import Button from "$store/components/ui/Button.tsx";
 
 function Newsletter() {
   return (
-    <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-20">
+    <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-20 justify-center">
       <div class="flex flex-col gap-2 max-w-[400px]">
         <Text
           variant="caption"
