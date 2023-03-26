@@ -4,10 +4,7 @@ import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import { lazy, Suspense } from "preact/compat";
-const LazyBannerItem = lazy(() =>
-  import("$store/components/ui/BannerItem.tsx")
-);
+import BannerItem from "./BannerItem.tsx";
 
 export interface Banner {
   /** @description desktop otimized image */
@@ -110,7 +107,6 @@ function Controls() {
 
 function BannerCarousel({ images, preload, interval }: Props) {
   const id = useId();
-
   return (
     <div
       id={id}
@@ -118,9 +114,7 @@ function BannerCarousel({ images, preload, interval }: Props) {
     >
       <Slider class="col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyBannerItem image={image} lcp={true} />
-          </Suspense>
+          <BannerItem image={image} lcp={index === 0 && preload} />
         ))}
       </Slider>
 
