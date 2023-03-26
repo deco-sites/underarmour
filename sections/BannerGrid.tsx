@@ -66,7 +66,7 @@ export default function BannnerGrid({
             <div class="m-0 w-full h-fit">
               <img height="525" src={srcMobile} alt={alt} className="hidden">
               </img>
-              <a
+              {/* <a
                 href={href}
                 style={`background-image:url('${srcMobile}')`}
                 class={`h-full block relative pb-[58.88889%] bg-no-repeat bg-cover bg-center ${
@@ -77,7 +77,7 @@ export default function BannnerGrid({
                     : `sm:rounded-none`
                 }`}
               >
-              </a>
+              </a> */}
             </div>
           ))}
         </div>
