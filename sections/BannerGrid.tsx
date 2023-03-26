@@ -64,10 +64,19 @@ export default function BannnerGrid({
         >
           {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
             <div class="m-0 w-full h-fit">
-              <img height="525" src={srcMobile} alt={alt} className="hidden">
+              <img
+                height="525"
+                src={srcMobile}
+                alt={alt}
+                decoding="async"
+                loading="lazy"
+                className="hidden"
+              >
               </img>
               <a
                 href={href}
+                loading="lazy"
+                className="hidden"
                 style={`background-image:url('${srcMobile}')`}
                 class={`h-full block relative pb-[58.88889%] bg-no-repeat bg-cover bg-center ${
                   borderRadius?.mobile && `rounded-[${borderRadius.mobile}px]`
