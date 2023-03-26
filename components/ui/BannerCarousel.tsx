@@ -58,12 +58,14 @@ function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
               loading={lcp ? "eager" : "lazy"}
               src={mobile}
               alt={alt}
+              width="2520" height="550"
             />
             <img
               class="hidden lg:block object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
               loading={lcp ? "eager" : "lazy"}
               src={desktop}
               alt={alt}
+              width="2520" height="550"
             />
           </div>
         </Picture>

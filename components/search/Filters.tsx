@@ -119,12 +119,12 @@ export default function Filters({ filters }: Props) {
                 <li class="flex flex-col gap-4 group h-[37px] hover:border-[#1d1d1d] hover:border-solid hover:border-b-[5px] ">
                   <Text
                     variant="menu"
-                    class="w-min px-[1.25rem] uppercase font-bold text-[13px] font-[700]"
+                    class="w-max px-[1.25rem] uppercase font-bold text-[13px] font-[700]"
                   >
                     {filter.label}
                   </Text>
                   <div class="group-hover:flex hidden absolute left-0 w-full bg-white w-full z-10
-  border border-gray-300 h-[173px] p-[2rem] top-[53px]">
+  border border-gray-300 h-[173px] p-[2rem] top-[53px] overflow-y-scroll overflow-x-hidden">
                     <div class=" ">
                       <FilterValues {...filter} />
                     </div>

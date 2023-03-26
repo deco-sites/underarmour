@@ -169,13 +169,13 @@ function Details({ page }: { page: ProductDetailsPage }) {
           <div class="flex flex-row sm:flex-row-reverse sm:order-1 overflow-auto snap-x snap-mandatory scroll-smooth sm:gap-2 relative">
             {[front].map((img, index) => (
               <Image
-                style={{ aspectRatio: "500 / 350" }}
-                class="snap-center min-w-[200vw] sm:min-w-0 sm:w-auto sm:h-[350]"
+                style={{ aspectRatio: "16 / 9" }}
+                class="snap-center object-contain min-w-[200vw] sm:min-w-0 sm:w-auto sm:h-[350]"
                 sizes="(max-width: 700px) 200vw, 30vw"
                 src={img.url!}
                 alt={img.alternateName}
                 width={500}
-                height={350}
+                height={294}
                 // Preload LCP image for better web vitals
                 preload={index === 0}
                 loading={index === 0 ? "eager" : "lazy"}

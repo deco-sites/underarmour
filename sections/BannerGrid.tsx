@@ -76,12 +76,12 @@ export default function BannnerGrid({
               <Picture>
                 <div class="max-h-[779px] w-[100%] relative pb-[58%]">
                   <img
-                    class=" w-full h-[100%] left-0 top-0 absolute object-cover"
+                    class=" w-full h-[100%] left-0 top-0 absolute object-contain"
                     sizes="(max-width: 640px) 100vw, 30vw"
                     src={srcMobile}
                     alt={alt}
-                    width={1320}
-                    height={779}
+                    width="1320"
+                    height="525"
                     decoding="async"
                     loading="lazy"
                   />
