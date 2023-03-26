@@ -1,12 +1,13 @@
-import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderControllerJS from "$store/islands/SliderJS.tsx";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import { useId } from "preact/hooks";
-import { animation, keyframes, tw } from "twind/css";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { lazy, Suspense } from "preact/compat";
+const LazyBannerItem = lazy(() =>
+  import("$store/components/ui/BannerItem.tsx")
+);
 
 export interface Banner {
   /** @description desktop otimized image */
@@ -38,40 +39,6 @@ export interface Props {
    * @description time (in seconds) to start the carousel autoplay
    */
   interval?: number;
-}
-
-function BannerItem({ image, lcp }: { image: Banner; lcp?: boolean }) {
-  const {
-    alt,
-    mobile,
-    desktop,
-    action,
-  } = image;
-
-  return (
-    <div class="relative min-w-[100vw] overflow-y-hidden">
-      <a href={action?.href ?? "#"} aria-label={action?.label}>
-        <Picture class="w-full" preload={lcp}>
-          <div class="max-h-[779px] w-[100%] relative pb-[47%]">
-            <img
-              class="lg:hidden object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
-              loading={lcp ? "eager" : "lazy"}
-              src={mobile}
-              alt={alt}
-              width="2520" height="550"
-            />
-            <img
-              class="hidden lg:block object-cover w-full sm:h-full w-full h-[100%] left-0 top-0 absolute"
-              loading={lcp ? "eager" : "lazy"}
-              src={desktop}
-              alt={alt}
-              width="2520" height="550"
-            />
-          </div>
-        </Picture>
-      </a>
-    </div>
-  );
 }
 
 function Dots({ images, interval = 0 }: Props) {
@@ -151,7 +118,9 @@ function BannerCarousel({ images, preload, interval }: Props) {
     >
       <Slider class="col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
-          <BannerItem image={image} lcp={index === 0 && preload} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyBannerItem image={image} lcp={true} />
+          </Suspense>
         ))}
       </Slider>
 
